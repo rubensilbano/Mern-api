@@ -22,12 +22,26 @@ export const createVideo: RequestHandler = async (req,res) => {
 // AL EJECUTAR MUESTRA TODOS LOS REGISTROS.
 export const getVideos: RequestHandler = async (req,res) => {
     try {
-        const videos = await Video.find()
+        // const videos = await Video.find()
+        const videos = await Video.find().exec();
         return res.json(videos);
     } catch (error) {
         res.json(error)
     }
 }
+
+
+// ASI IMPLEMENTA UNA RUTA EN EL EJEMPLO
+// routes.get("/", async (req, res) => {
+//     try {
+//       const countries: ICountry[] = await CountryModel.find().exec();
+//       return res.json(countries);
+//     } catch (error) {
+//       console.error(error);
+//       return res.status(500).json({ error: "Sorry, something went wrong :/" });
+//     }
+// });
+
 
 //  DEVUELVE UNICAMENTE EL ELEMENTO QUE COINCIDA CON EL ID RECIBIDO
 export const getVideo: RequestHandler = async (req,res) => {
