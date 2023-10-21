@@ -45,10 +45,10 @@ import { hostname } from "os";
 // mongoose.connect(process.env.MONGO_URL);
 
 console.log("MENSAJE DE PRUEBA")
-console.log(`mongodb://${config.MONGO_USER}:${config.MONGO_PASSWORD}@${config.MONGO_HOST}/${config.MONGO_DATABASE}`)
+console.log(`mongodb://${config.MONGO_USER}:${config.MONGO_PASSWORD}@${config.MONGO_HOST}:${config.MONGO_PORT}`)
 
 mongoose.connect(
-    `mongodb://${config.MONGO_USER}:${config.MONGO_PASSWORD}@${config.MONGO_HOST}/${config.MONGO_DATABASE}`
+    `mongodb://${config.MONGO_USER}:${config.MONGO_PASSWORD}@${config.MONGO_HOST}:${config.MONGO_PORT}`
 );
 
 const database = mongoose.connection;
