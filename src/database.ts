@@ -43,6 +43,10 @@ import { hostname } from "os";
 
 // METODO DE RAILWAY
 // mongoose.connect(process.env.MONGO_URL);
+
+console.log("MENSAJE DE PRUEBA")
+console.log(`mongodb://${config.MONGO_USER}:${config.MONGO_PASSWORD}@${config.MONGO_HOST}/${config.MONGO_DATABASE}`)
+
 mongoose.connect(
     `mongodb://${config.MONGO_USER}:${config.MONGO_PASSWORD}@${config.MONGO_HOST}/${config.MONGO_DATABASE}`
 );
@@ -51,8 +55,8 @@ const database = mongoose.connection;
 
 database.on(
   "error",
-  console.error.bind(console, "❌ mongodb connection error")
+  console.error.bind(console, "❌ mongodb ERROR DE CONEXION")
 );
-database.once("open", () => console.log("✅ mongodb connected successfully"));
+database.once("open", () => console.log("✅ mongodb CONECTADA EN EL SERVIDOR", mongoose.connection.name));
 
 mongoose.Promise = Promise;
