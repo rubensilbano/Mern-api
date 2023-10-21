@@ -43,10 +43,7 @@ import { hostname } from "os";
 
 // METODO DE RAILWAY
 // mongoose.connect(process.env.MONGO_URL);
-
-console.log("MENSAJE DE PRUEBA")
-console.log(`mongodb://${config.MONGO_USER}:${config.MONGO_PASSWORD}@${config.MONGO_HOST}:${config.MONGO_PORT}`)
-
+// ESTE METODO REEMPLAZA EL NOMBRE DE LA BD POR EL PUERTO HTTP
 mongoose.connect(
     `mongodb://${config.MONGO_USER}:${config.MONGO_PASSWORD}@${config.MONGO_HOST}:${config.MONGO_PORT}`
 );
